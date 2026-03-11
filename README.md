@@ -212,7 +212,7 @@ A --> B --> C --> D --> E --> F --> G --> H --> I
 
 ---
 
-#Tech Stack
+# Tech Stack
 
 ### Frontend
 - React
