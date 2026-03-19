@@ -192,59 +192,41 @@ Example Premium:
 
 ---
 
-# End-to-End Workflow
+# End-to-End Workflow ( Updated as per Market Crash )
 
 ```mermaid
 flowchart LR
 
-A[Worker Registration]
-B[AI Risk Scoring]
-C[Weekly Premium Generated]
-D[Policy Activated]
-E[Trigger Monitoring]
-F[Disruption Detected]
-G[Automatic Claim Created]
-H[Fraud Check]
-I[Payout Issued]
+A[Disruption Detected] --> B[Find Affected Workers]
 
-A --> B --> C --> D --> E --> F --> G --> H --> I
+B --> C[Check Multiple Signals]
+
+C --> D1[Location Check]
+C --> D2[Weather / Traffic Data]
+C --> D3[Worker Activity]
+
+D1 --> E[Basic Validation]
+D2 --> E
+D3 --> E
+
+E --> F[Behavior Check]
+
+F --> G[AI Flags Anything Unusual]
+
+G --> H{Risk Level}
+
+H -->|Looks Normal| I[Auto Approve]
+H -->|Slight Doubt| J[Verify More]
+H -->|Suspicious| K[Manual Review]
+
+I --> L[Payout]
+J --> L
+K --> M[Investigate]
 ```
 
 ---
 
-# Tech Stack
-
-### Frontend
-- React
-- Tailwind CSS
-
-### Backend
-- FastAPI / Node.js
-
-### AI / Machine Learning
-- Python
-- Scikit-learn
-- Pandas
-
-### Database
-- PostgreSQL / MongoDB
-
-### External APIs
-- Weather APIs
-- Air Quality APIs
-- Traffic APIs
-
----
-
-# Future Enhancements
-
-- Predictive disruption alerts
-- Hyperlocal risk heatmaps
-- Advanced fraud detection models
-- Instant payout integrations
-
----
-## Advanced Adversarial Defense & Anti-Spoofing Strategy
+# Advanced Defense & Anti-Spoofing Strategy ( Market Crash )
 
 To make sure our system isn’t easily exploited, we don’t rely on a single check like GPS. Instead, we combine multiple signals and simple logic with AI support to verify whether a claim is genuine or not.
 
@@ -359,38 +341,29 @@ So we make sure:
 - Genuine users are not penalized for occasional anomalies  
 
 ---
+# Tech Stack
 
-## Claim Validation & Fraud Detection Flow
+### Frontend
+- React
+- Tailwind CSS
 
-```mermaid
-flowchart LR
+### Backend
+- FastAPI / Node.js
 
-A[Disruption Detected] --> B[Find Affected Workers]
+### AI / Machine Learning
+- Python
+- Scikit-learn
+- Pandas
 
-B --> C[Check Multiple Signals]
+### Database
+- PostgreSQL / MongoDB
 
-C --> D1[Location Check]
-C --> D2[Weather / Traffic Data]
-C --> D3[Worker Activity]
+### External APIs
+- Weather APIs
+- Air Quality APIs
+- Traffic APIs
 
-D1 --> E[Basic Validation]
-D2 --> E
-D3 --> E
-
-E --> F[Behavior Check]
-
-F --> G[AI Flags Anything Unusual]
-
-G --> H{Risk Level}
-
-H -->|Looks Normal| I[Auto Approve]
-H -->|Slight Doubt| J[Verify More]
-H -->|Suspicious| K[Manual Review]
-
-I --> L[Payout]
-J --> L
-K --> M[Investigate]
-```
+---
 
 ### Conclusion
 
