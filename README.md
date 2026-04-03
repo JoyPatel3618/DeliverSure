@@ -365,6 +365,42 @@ So we make sure:
 
 ---
 
+# How to Run the Project
+
+## Prerequisites
+- Node.js (v18+ recommended)
+- Python (3.9+)
+- pip
+
+---
+
+## Backend Setup (FastAPI)
+
+```bash
+cd backend
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
+
+Backend will run on:
+```bash
+http://127.0.0.1:8000
+```
+---
+
+## Frontend Setup (React + Vite)
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Frontend will run on:
+```bash
+http://localhost:5173
+```
+---
 ### Conclusion
 
 The goal is simple:
